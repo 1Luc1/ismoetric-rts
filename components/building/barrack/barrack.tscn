@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2qg1cmsu28fb"]
+
+[ext_resource type="Script" path="res://components/building/barrack/barrack.gd" id="1_oj2cd"]
+[ext_resource type="Texture2D" uid="uid://cj6dxfoaq2y4d" path="res://components/building/barrack/anim/build/build.png" id="3_dxaxd"]
+[ext_resource type="Texture2D" uid="uid://cp8wtcmklmwx1" path="res://components/building/barrack/path1434.png" id="4_hjdy6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1igr"]
+atlas = ExtResource("3_dxaxd")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3jdw"]
+atlas = ExtResource("3_dxaxd")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sxsd"]
+atlas = ExtResource("3_dxaxd")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tmt2"]
+atlas = ExtResource("3_dxaxd")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0rvxn"]
+animations = [{
+"frames": [SubResource("AtlasTexture_w1igr"), SubResource("AtlasTexture_i3jdw"), SubResource("AtlasTexture_8sxsd"), SubResource("AtlasTexture_1tmt2")],
+"loop": false,
+"name": &"build",
+"speed": 10.0
+}]
+
+[node name="barrack" type="StaticBody2D"]
+position = Vector2(0, -32)
+script = ExtResource("1_oj2cd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 8)
+texture = ExtResource("4_hjdy6")
+region_rect = Rect2(-2, -2, 132, 132)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+frames = SubResource("SpriteFrames_0rvxn")
+animation = &"build"
+
+[node name="WorldCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(8, 56)
+polygon = PackedVector2Array(-24, 0, 40, -32, -8, -56, -72, -24)
+
+[node name="BuildingArea" type="Area2D" parent="." groups=["build_area"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingArea"]
+position = Vector2(16, 56)
+polygon = PackedVector2Array(-64, -24, -16, 0, 32, -24, -16, -48)
+
+[node name="SelectArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectArea"]
+polygon = PackedVector2Array(-64, 0, 16, -40, 32, -32, 48, -8, 48, 24, -16, 56, -64, 32)
+
+[node name="SpawnMarker" type="Marker2D" parent="."]
+position = Vector2(-40, 48)
+
+[node name="WaypointMarker" type="Marker2D" parent="."]
+position = Vector2(-72, 72)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="BuildingArea" to="." method="_on_building_area_area_entered"]
+[connection signal="area_exited" from="BuildingArea" to="." method="_on_building_area_area_exited"]
+[connection signal="input_event" from="SelectArea" to="." method="_on_select_area_input_event"]

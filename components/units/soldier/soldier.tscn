@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://4n48hlk8kvfl"]
+
+[ext_resource type="Texture2D" uid="uid://cnnmvr4dem50n" path="res://components/units/soldier/soldier.png" id="1_2ekn5"]
+[ext_resource type="Script" path="res://components/units/soldier/soldier.gd" id="1_xmm6e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdgne"]
+radius = 8.0
+height = 52.0
+
+[node name="Soldier" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_xmm6e")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+texture = ExtResource("1_2ekn5")
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("CapsuleShape2D_bdgne")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+
+[node name="Selection" type="Node2D" parent="."]
+visible = false
+
+[node name="Line2D" type="Line2D" parent="Selection"]
+position = Vector2(-77, 18)
+points = PackedVector2Array(88, -58, 88, -64, 82, -64)
+width = 2.0
+default_color = Color(0.117647, 1, 0.266667, 0.427451)
+
+[node name="Line2D2" type="Line2D" parent="Selection"]
+position = Vector2(-83, 57)
+points = PackedVector2Array(72, -53, 72, -48, 77, -48)
+width = 2.0
+default_color = Color(0.117647, 1, 0.266667, 0.427451)
+
+[node name="Line2D3" type="Line2D" parent="Selection"]
+position = Vector2(-77, 57)
+points = PackedVector2Array(83, -48, 88, -48, 88, -53)
+width = 2.0
+default_color = Color(0.117647, 1, 0.266667, 0.427451)
+
+[node name="Line2D4" type="Line2D" parent="Selection"]
+position = Vector2(-83, 18)
+points = PackedVector2Array(72, -58, 72, -64, 78, -64)
+width = 2.0
+default_color = Color(0.117647, 1, 0.266667, 0.427451)

@@ -1,0 +1,118 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "TextureButton",
+"class": &"BuildButton",
+"language": &"GDScript",
+"path": "res://components/gui/build_button/build_button.gd"
+}, {
+"base": "State",
+"class": &"BuildMode",
+"language": &"GDScript",
+"path": "res://components/state_machine/build_mode.gd"
+}, {
+"base": "StaticBody2D",
+"class": &"Building",
+"language": &"GDScript",
+"path": "res://components/building/building.gd"
+}, {
+"base": "Node",
+"class": &"BuildingQueue",
+"language": &"GDScript",
+"path": "res://components/gui/building_queue.gd"
+}, {
+"base": "State",
+"class": &"BuildingSelected",
+"language": &"GDScript",
+"path": "res://components/state_machine/building_selected.gd"
+}, {
+"base": "State",
+"class": &"DragMode",
+"language": &"GDScript",
+"path": "res://components/state_machine/drag_mode.gd"
+}, {
+"base": "State",
+"class": &"NothingSelected",
+"language": &"GDScript",
+"path": "res://components/state_machine/nothing_selected.gd"
+}, {
+"base": "Node",
+"class": &"State",
+"language": &"GDScript",
+"path": "res://components/state_machine/state.gd"
+}, {
+"base": "Node",
+"class": &"StateMachine",
+"language": &"GDScript",
+"path": "res://components/state_machine/state_machine.gd"
+}, {
+"base": "State",
+"class": &"UnitSelected",
+"language": &"GDScript",
+"path": "res://components/state_machine/unit_selected.gd"
+}, {
+"base": "State",
+"class": &"UnitsSelected",
+"language": &"GDScript",
+"path": "res://components/state_machine/units_selected.gd"
+}]
+_global_script_class_icons={
+"BuildButton": "",
+"BuildMode": "",
+"Building": "",
+"BuildingQueue": "",
+"BuildingSelected": "",
+"DragMode": "",
+"NothingSelected": "",
+"State": "",
+"StateMachine": "",
+"UnitSelected": "",
+"UnitsSelected": ""
+}
+
+[application]
+
+config/name="RTS"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.0")
+config/icon="res://components/gui/icons/g646-9_icon.png"
+
+[autoload]
+
+MouseCursor="*res://components/gui/mouse_cursor.tscn"
+GameData="*res://components/game_data.gd"
+
+[display]
+
+mouse_cursor/custom_image="res://assets/cursor_default_02.png"
+
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
+[input]
+
+left_mouse_btn={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+right_mouse_btn={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"pressed":false,"double_click":false,"script":null)
+]
+}
+delete={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194312,"unicode":0,"echo":false,"script":null)
+]
+}

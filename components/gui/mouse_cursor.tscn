@@ -1,0 +1,136 @@
+[gd_scene load_steps=10 format=3 uid="uid://ccknr7mvyvppl"]
+
+[ext_resource type="Script" path="res://components/gui/mouse_cursor.gd" id="1_5sq1w"]
+[ext_resource type="Texture2D" uid="uid://buhcwryrqlwc4" path="res://assets/mvc_deploy.png" id="2_ji3pl"]
+[ext_resource type="Texture2D" uid="uid://drmc51o57l2vl" path="res://assets/hover_selection.png" id="2_yhf5a"]
+[ext_resource type="Texture2D" uid="uid://c6v6aw4b7kail" path="res://assets/move_unit.png" id="4_bxqtk"]
+
+[sub_resource type="Animation" id="Animation_yqvm3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deploy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("selection:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("move:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_nytuf"]
+resource_name = "deploy"
+length = 0.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("deploy:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_jpgmi"]
+resource_name = "move"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("move:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_36orn"]
+resource_name = "selection"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("selection:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xwto"]
+_data = {
+"RESET": SubResource("Animation_yqvm3"),
+"deploy": SubResource("Animation_nytuf"),
+"move": SubResource("Animation_jpgmi"),
+"selection": SubResource("Animation_36orn")
+}
+
+[node name="MouseCursor" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("1_5sq1w")
+
+[node name="Node2d" type="Node2D" parent="."]
+z_index = 4096
+
+[node name="deploy" type="Sprite2D" parent="Node2d"]
+texture = ExtResource("2_ji3pl")
+hframes = 9
+
+[node name="selection" type="Sprite2D" parent="Node2d"]
+texture = ExtResource("2_yhf5a")
+hframes = 6
+
+[node name="move" type="Sprite2D" parent="Node2d"]
+texture = ExtResource("4_bxqtk")
+hframes = 4
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2d"]
+libraries = {
+"": SubResource("AnimationLibrary_4xwto")
+}

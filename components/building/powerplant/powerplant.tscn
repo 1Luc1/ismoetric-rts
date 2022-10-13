@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://cpgfvt8hqjbkq"]
+
+[ext_resource type="Script" path="res://components/building/powerplant/powerplant.gd" id="1_qpxw2"]
+[ext_resource type="Texture2D" uid="uid://ckjom0d74ax3h" path="res://components/building/powerplant/g646-9.png" id="3_4i6l7"]
+[ext_resource type="Texture2D" uid="uid://cgayapvuxv85t" path="res://components/building/powerplant/anim/build/build.png" id="3_6ruql"]
+[ext_resource type="Material" uid="uid://cvfhloycbk0d4" path="res://components/building/smoke.tres" id="4_e0v5w"]
+[ext_resource type="Texture2D" uid="uid://ckegmdn1m46dk" path="res://assets/smoke1.png" id="5_vskhk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woq72"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwx7k"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53v6s"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_613ty"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctsx2"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsjij"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijhl6"]
+atlas = ExtResource("3_6ruql")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lk12"]
+animations = [{
+"frames": [SubResource("AtlasTexture_woq72"), SubResource("AtlasTexture_bwx7k"), SubResource("AtlasTexture_53v6s"), SubResource("AtlasTexture_613ty"), SubResource("AtlasTexture_ctsx2"), SubResource("AtlasTexture_vsjij"), SubResource("AtlasTexture_ijhl6")],
+"loop": false,
+"name": &"build",
+"speed": 10.0
+}]
+
+[node name="powerplant" type="StaticBody2D"]
+position = Vector2(0, -64)
+script = ExtResource("1_qpxw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(32, 3)
+texture = ExtResource("3_4i6l7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, -8)
+frames = SubResource("SpriteFrames_3lk12")
+animation = &"build"
+
+[node name="WorldCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 32)
+polygon = PackedVector2Array(0, 64, 128, 0, 64, -32, -64, 32)
+
+[node name="BuildingArea" type="Area2D" parent="." groups=["build_area"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingArea"]
+position = Vector2(-8, 56)
+polygon = PackedVector2Array(72, -48, -40, 8, 8, 32, 120, -24)
+
+[node name="SelectArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SelectArea"]
+position = Vector2(0, 32)
+polygon = PackedVector2Array(-32, -48, -32, -72, -16, -72, 0, -64, 48, -88, 46.0529, -107.661, 64, -120, 80, -104, 80, -88, 112, -72, 112, -8, 80, 8, 80, 24, 48.8831, 39.5584, 32, 32, -16, 56, -64, 32, -64, -32)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(-16, -32)
+amount = 3
+process_material = ExtResource("4_e0v5w")
+texture = ExtResource("5_vskhk")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(64, -80)
+process_material = ExtResource("4_e0v5w")
+texture = ExtResource("5_vskhk")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="BuildingArea" to="." method="_on_building_area_area_entered"]
+[connection signal="area_exited" from="BuildingArea" to="." method="_on_building_area_area_exited"]
+[connection signal="input_event" from="SelectArea" to="." method="_on_select_area_input_event"]

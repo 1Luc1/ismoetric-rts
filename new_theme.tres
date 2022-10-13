@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://rhs712yen6ls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62kgi"]
+border_width_left = 2
+corner_radius_top_left = 8
+corner_radius_bottom_left = 8
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxFlat_62kgi")

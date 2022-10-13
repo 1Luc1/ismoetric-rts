@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy61jn2mj4p05"]
+
+[ext_resource type="Script" path="res://components/build_area/build_area.gd" id="1_am87v"]
+
+[node name="BuildArea" type="Area2D" groups=["build_area"]]
+script = ExtResource("1_am87v")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(62, 0, 0, 31, -62, 0, 0, -31)
+
+[connection signal="area_entered" from="." to="." method="_on_build_area_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_build_area_area_exited"]
