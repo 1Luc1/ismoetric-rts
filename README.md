@@ -1,0 +1,5 @@
+# Isometric RTS Test
+- Build upon Godot 4.0
+- all assets are made with Inkscape
+
+https://user-images.githubusercontent.com/25635952/195591697-26938bc3-170f-4e05-b12b-d37984a9f61e.mp4
