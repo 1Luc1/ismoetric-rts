@@ -7,8 +7,8 @@ var camera_movement = Vector2(0,0)
 func _ready():
 	drag_horizontal_enabled = false
 	drag_vertical_enabled = false
-	set_enable_follow_smoothing(true)
-	set_follow_smoothing(4)
+	position_smoothing_enabled = true
+	position_smoothing_speed = 4
 	#set_physics_process(false)
 
 func _physics_process(delta):
