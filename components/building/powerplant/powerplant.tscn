@@ -36,7 +36,28 @@ region = Rect2(1152, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3lk12"]
 animations = [{
-"frames": [SubResource("AtlasTexture_woq72"), SubResource("AtlasTexture_bwx7k"), SubResource("AtlasTexture_53v6s"), SubResource("AtlasTexture_613ty"), SubResource("AtlasTexture_ctsx2"), SubResource("AtlasTexture_vsjij"), SubResource("AtlasTexture_ijhl6")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woq72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwx7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53v6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_613ty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctsx2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsjij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijhl6")
+}],
 "loop": false,
 "name": &"build",
 "speed": 10.0
@@ -53,7 +74,7 @@ texture = ExtResource("3_4i6l7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(32, -8)
-frames = SubResource("SpriteFrames_3lk12")
+sprite_frames = SubResource("SpriteFrames_3lk12")
 animation = &"build"
 
 [node name="WorldCollision" type="CollisionPolygon2D" parent="."]

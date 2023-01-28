@@ -240,7 +240,6 @@ max_space = Vector2(1, 1.1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_opuf8"]
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hcqrw"]
 
@@ -258,8 +257,8 @@ graph_offset = Vector2(-447.772, 206.194)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_vnsgw"]
 
 [node name="MCV" type="CharacterBody2D"]
-position = Vector2(0, 3)
 y_sort_enabled = true
+position = Vector2(0, 3)
 input_pickable = true
 script = ExtResource("1_5hk2e")
 

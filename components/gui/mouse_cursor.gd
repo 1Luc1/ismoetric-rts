@@ -58,13 +58,10 @@ func revert():
 	match saved_animation:
 		Animations.Selection:
 			play_selection()
-			continue
 		Animations.Move:
 			play_move()
-			continue
 		Animations.Deploy:
 			play_deploy()
-			continue
 	saved_animation = -1
 
 

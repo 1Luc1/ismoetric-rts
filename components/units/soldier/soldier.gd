@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var next_location = agent.get_next_location()
+	var next_location = agent.get_next_path_position()
 	get_tree().call_group("fog_handler", "blend_fog", next_location)
 	var direction = (next_location - global_transform.origin).normalized()
 	var v = velocity.move_toward(direction * 300, 540 * delta)
@@ -26,7 +26,7 @@ func on_velocity_computed(safe_velocity: Vector2) -> void:
 
 func set_target_location(target):
 	set_physics_process(true)
-	agent.set_target_location(target)
+	agent.set_target_position(target)
 
 
 func on_target_reached() -> void:

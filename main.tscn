@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://d1wjphvkcrc8x"]
+[gd_scene load_steps=28 format=3 uid="uid://d1wjphvkcrc8x"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_p33x7"]
 [ext_resource type="Script" path="res://main/select_draw.gd" id="2_5dnb1"]
 [ext_resource type="PackedScene" uid="uid://ccknr7mvyvppl" path="res://components/gui/mouse_cursor.tscn" id="2_62bch"]
 [ext_resource type="PackedScene" uid="uid://cpgfvt8hqjbkq" path="res://components/building/powerplant/powerplant.tscn" id="2_j7gcy"]
@@ -69,11 +68,10 @@ sources/1 = SubResource("TileSetAtlasSource_5nbqc")
 sources/2 = SubResource("TileSetAtlasSource_ydm77")
 
 [node name="Main" type="Node2D" groups=["fog_handler"]]
-script = ExtResource("1_p33x7")
 
 [node name="Fog" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_bo12l")
 z_index = 2
+material = SubResource("CanvasItemMaterial_bo12l")
 
 [node name="MouseCursor" parent="." instance=ExtResource("2_62bch")]
 
@@ -138,32 +136,20 @@ theme_override_constants/margin_right = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/Panel/MarginContainer"]
 layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 116.0
-offset_bottom = 162.0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="GUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 106.0
-offset_bottom = 26.0
 text = "$ 0"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="GUI/Panel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2i(106, 106)
+custom_minimum_size = Vector2(106, 106)
 layout_mode = 2
-offset_top = 36.0
-offset_right = 106.0
-offset_bottom = 142.0
 color = Color(0, 0, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 152.0
-offset_right = 106.0
-offset_bottom = 152.0
 theme_override_constants/separation = 10
 
 [node name="BuildingContainer" type="GridContainer" parent="GUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -171,8 +157,6 @@ layout_mode = 2
 
 [node name="UnitContainer" type="GridContainer" parent="GUI/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-offset_left = 10.0
-offset_right = 10.0
 
 [node name="Panel2" type="Panel" parent="GUI"]
 anchors_preset = 11

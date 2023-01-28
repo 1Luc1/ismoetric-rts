@@ -1,4 +1,6 @@
 extends Node2D
+# FOG SCRIPT ADD TO Main to work
+# BAD PERFORMANCE WITH ALOT OF UNITS
 
 const LightTexture = preload("res://assets/Light04.png")
 const GRID_SIZE = 8
@@ -22,6 +24,7 @@ func _ready():
 	fog.centered = false
 	var fog_image_width = int(float(display_width)/float(GRID_SIZE))
 	var fog_image_height = int(float(display_height)/float(GRID_SIZE))
+	fogImage = Image.create(fog_image_width, fog_image_height, false, Image.FORMAT_RGBAH)
 	fogImage.create(fog_image_width, fog_image_height, false, Image.FORMAT_RGBAH)
 	fogImage.fill(Color.BLACK)
 	lightImage.convert(Image.FORMAT_RGBAH)

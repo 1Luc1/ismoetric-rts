@@ -4,8 +4,8 @@
 
 [resource]
 shader = ExtResource("1_7a388")
-shader_parameter/add_margins = false
 shader_parameter/color = Vector4(0, 0.98, 0.6, 0.819)
-shader_parameter/inside = true
-shader_parameter/pattern = 2
 shader_parameter/width = 3.906
+shader_parameter/pattern = 2
+shader_parameter/inside = true
+shader_parameter/add_margins = false
