@@ -26,8 +26,8 @@ blend_mode = 3
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_csp80"]
 vertices = PackedVector2Array(64, 0, 0, 32, -64, 0, 0, -32)
-polygons = [PackedInt32Array(0, 0, 1, 2, 2, 3)]
-outlines = [PackedVector2Array(0, -32, -64, 0, -64, 0, 0, 32, 64, 0, 64, 0)]
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 0, 1, 2, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -32, -64, 0, -64, 0, 0, 32, 64, 0, 64, 0)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_q4ghb"]
 
@@ -103,7 +103,6 @@ position = Vector2(584, 296)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-current = true
 zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = 0
