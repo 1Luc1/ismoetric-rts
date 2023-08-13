@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c8moulqy0wgbp"]
+[gd_scene load_steps=32 format=3 uid="uid://c8moulqy0wgbp"]
 
 [ext_resource type="Script" path="res://components/vehicle/mcv/mcv.gd" id="1_5hk2e"]
 [ext_resource type="Texture2D" uid="uid://ew0gtsee3xex" path="res://components/vehicle/mcv/mvc_tileset.png" id="3_4ixmq"]
@@ -254,8 +254,6 @@ states/Start/position = Vector2(27, 333)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_opuf8"), "Idle", "Move", SubResource("AnimationNodeStateMachineTransition_hcqrw"), "Move", "Idle", SubResource("AnimationNodeStateMachineTransition_uvpvk")]
 graph_offset = Vector2(-447.772, 206.194)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_vnsgw"]
-
 [node name="MCV" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, 3)
@@ -281,7 +279,6 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_78hck")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_vnsgw")
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Move/blend_position = Vector2(0.835897, -0.0100304)
 
