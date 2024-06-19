@@ -276,13 +276,61 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_uoss8")
-}
 tree_root = SubResource("AnimationNodeStateMachine_78hck")
 anim_player = NodePath("../AnimationPlayer")
+parameters/current_length = false
+parameters/current_position = false
+parameters/current_delta = false
+parameters/End/current_length = null
+parameters/End/current_position = null
+parameters/End/current_delta = null
+parameters/Idle/current_length = Vector2(0, 0)
+parameters/Idle/current_position = Vector2(0, 0)
+parameters/Idle/current_delta = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Idle/0/current_length = null
+parameters/Idle/0/current_position = null
+parameters/Idle/0/current_delta = null
+parameters/Idle/1/current_length = null
+parameters/Idle/1/current_position = null
+parameters/Idle/1/current_delta = null
+parameters/Idle/2/current_length = null
+parameters/Idle/2/current_position = null
+parameters/Idle/2/current_delta = null
+parameters/Idle/3/current_length = null
+parameters/Idle/3/current_position = null
+parameters/Idle/3/current_delta = null
+parameters/Move/current_length = Vector2(0, 0)
+parameters/Move/current_position = Vector2(0, 0)
+parameters/Move/current_delta = Vector2(0, 0)
 parameters/Move/blend_position = Vector2(0.835897, -0.0100304)
+parameters/Move/0/current_length = null
+parameters/Move/0/current_position = null
+parameters/Move/0/current_delta = null
+parameters/Move/1/current_length = null
+parameters/Move/1/current_position = null
+parameters/Move/1/current_delta = null
+parameters/Move/2/current_length = null
+parameters/Move/2/current_position = null
+parameters/Move/2/current_delta = null
+parameters/Move/3/current_length = null
+parameters/Move/3/current_position = null
+parameters/Move/3/current_delta = null
+parameters/Move/4/current_length = null
+parameters/Move/4/current_position = null
+parameters/Move/4/current_delta = null
+parameters/Move/5/current_length = null
+parameters/Move/5/current_position = null
+parameters/Move/5/current_delta = null
+parameters/Move/6/current_length = null
+parameters/Move/6/current_position = null
+parameters/Move/6/current_delta = null
+parameters/Move/7/current_length = null
+parameters/Move/7/current_position = null
+parameters/Move/7/current_delta = null
+parameters/Start/current_length = null
+parameters/Start/current_position = null
+parameters/Start/current_delta = null
 
 [node name="Selection" type="Node2D" parent="."]
 visible = false

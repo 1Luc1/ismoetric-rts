@@ -64,4 +64,3 @@ func _on_building_area_area_entered(area: Area2D):
 func _on_building_area_area_exited(area):
 	if area.is_in_group("build_area"):
 		modulate = Color(1,1,1,1)
-

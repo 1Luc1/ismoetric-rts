@@ -13,4 +13,3 @@ func _on_animated_sprite_2d_animation_finished():
 	$GPUParticles2D2.visible = true
 	get_tree().call_group("gui", "add_buildings", buildings)
 	get_tree().call_group("gui", "add_power", 20)
-
