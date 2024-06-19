@@ -51,11 +51,10 @@ func select_units(units):
 	for unit in selected_units:
 		#if selected_unit:
 			#selected_unit.unselect()
-		if unit != null:
+		if unit != null and weakref(unit).get_ref():
 			unit.unselect()
 		
 	selected_units = units
 	for unit in selected_units:
 		unit.select()
 	MouseCursor.play_move()
-
