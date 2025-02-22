@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cpgfvt8hqjbkq"]
 
-[ext_resource type="Script" path="res://components/building/powerplant/powerplant.gd" id="1_qpxw2"]
+[ext_resource type="Script" uid="uid://4mmxvp5t34i" path="res://components/building/powerplant/powerplant.gd" id="1_qpxw2"]
 [ext_resource type="Texture2D" uid="uid://ckjom0d74ax3h" path="res://components/building/powerplant/g646-9.png" id="3_4i6l7"]
 [ext_resource type="Texture2D" uid="uid://cgayapvuxv85t" path="res://components/building/powerplant/anim/build/build.png" id="3_6ruql"]
 [ext_resource type="Material" uid="uid://cvfhloycbk0d4" path="res://components/building/smoke.tres" id="4_e0v5w"]
@@ -97,14 +97,14 @@ polygon = PackedVector2Array(-32, -48, -32, -72, -16, -72, 0, -64, 48, -88, 46.0
 visible = false
 position = Vector2(-16, -32)
 amount = 3
-process_material = ExtResource("4_e0v5w")
 texture = ExtResource("5_vskhk")
+process_material = ExtResource("4_e0v5w")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
 visible = false
 position = Vector2(64, -80)
-process_material = ExtResource("4_e0v5w")
 texture = ExtResource("5_vskhk")
+process_material = ExtResource("4_e0v5w")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="BuildingArea" to="." method="_on_building_area_area_entered"]

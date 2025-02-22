@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4n48hlk8kvfl"]
 
 [ext_resource type="Texture2D" uid="uid://cnnmvr4dem50n" path="res://components/units/soldier/soldier.png" id="1_2ekn5"]
-[ext_resource type="Script" path="res://components/units/soldier/soldier.gd" id="1_xmm6e"]
+[ext_resource type="Script" uid="uid://cu54iwo164d4v" path="res://components/units/soldier/soldier.gd" id="1_xmm6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdgne"]
 radius = 8.0

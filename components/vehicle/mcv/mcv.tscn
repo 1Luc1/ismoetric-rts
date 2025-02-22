@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://c8moulqy0wgbp"]
 
-[ext_resource type="Script" path="res://components/vehicle/mcv/mcv.gd" id="1_5hk2e"]
+[ext_resource type="Script" uid="uid://du6k4oo8qeto6" path="res://components/vehicle/mcv/mcv.gd" id="1_5hk2e"]
 [ext_resource type="Texture2D" uid="uid://ew0gtsee3xex" path="res://components/vehicle/mcv/mvc_tileset.png" id="3_4ixmq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_64jlc"]
@@ -161,15 +161,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uoss8"]
 _data = {
-"down": SubResource("Animation_rb6ov"),
-"idle": SubResource("Animation_f2606"),
-"left": SubResource("Animation_yjs76"),
-"left_down": SubResource("Animation_ymmod"),
-"left_up": SubResource("Animation_2d77x"),
-"right": SubResource("Animation_22aaa"),
-"right_down": SubResource("Animation_io3s6"),
-"right_up": SubResource("Animation_416nq"),
-"up": SubResource("Animation_0dmrp")
+&"down": SubResource("Animation_rb6ov"),
+&"idle": SubResource("Animation_f2606"),
+&"left": SubResource("Animation_yjs76"),
+&"left_down": SubResource("Animation_ymmod"),
+&"left_up": SubResource("Animation_2d77x"),
+&"right": SubResource("Animation_22aaa"),
+&"right_down": SubResource("Animation_io3s6"),
+&"right_up": SubResource("Animation_416nq"),
+&"up": SubResource("Animation_0dmrp")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7b8ba"]
@@ -267,70 +267,18 @@ shape = SubResource("CapsuleShape2D_64jlc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_4ixmq")
 hframes = 8
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 libraries = {
-"": SubResource("AnimationLibrary_uoss8")
+&"": SubResource("AnimationLibrary_uoss8")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_78hck")
 anim_player = NodePath("../AnimationPlayer")
-parameters/current_length = false
-parameters/current_position = false
-parameters/current_delta = false
-parameters/End/current_length = null
-parameters/End/current_position = null
-parameters/End/current_delta = null
-parameters/Idle/current_length = Vector2(0, 0)
-parameters/Idle/current_position = Vector2(0, 0)
-parameters/Idle/current_delta = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Idle/0/current_length = null
-parameters/Idle/0/current_position = null
-parameters/Idle/0/current_delta = null
-parameters/Idle/1/current_length = null
-parameters/Idle/1/current_position = null
-parameters/Idle/1/current_delta = null
-parameters/Idle/2/current_length = null
-parameters/Idle/2/current_position = null
-parameters/Idle/2/current_delta = null
-parameters/Idle/3/current_length = null
-parameters/Idle/3/current_position = null
-parameters/Idle/3/current_delta = null
-parameters/Move/current_length = Vector2(0, 0)
-parameters/Move/current_position = Vector2(0, 0)
-parameters/Move/current_delta = Vector2(0, 0)
 parameters/Move/blend_position = Vector2(0.835897, -0.0100304)
-parameters/Move/0/current_length = null
-parameters/Move/0/current_position = null
-parameters/Move/0/current_delta = null
-parameters/Move/1/current_length = null
-parameters/Move/1/current_position = null
-parameters/Move/1/current_delta = null
-parameters/Move/2/current_length = null
-parameters/Move/2/current_position = null
-parameters/Move/2/current_delta = null
-parameters/Move/3/current_length = null
-parameters/Move/3/current_position = null
-parameters/Move/3/current_delta = null
-parameters/Move/4/current_length = null
-parameters/Move/4/current_position = null
-parameters/Move/4/current_delta = null
-parameters/Move/5/current_length = null
-parameters/Move/5/current_position = null
-parameters/Move/5/current_delta = null
-parameters/Move/6/current_length = null
-parameters/Move/6/current_position = null
-parameters/Move/6/current_delta = null
-parameters/Move/7/current_length = null
-parameters/Move/7/current_position = null
-parameters/Move/7/current_delta = null
-parameters/Start/current_length = null
-parameters/Start/current_position = null
-parameters/Start/current_delta = null
 
 [node name="Selection" type="Node2D" parent="."]
 visible = false

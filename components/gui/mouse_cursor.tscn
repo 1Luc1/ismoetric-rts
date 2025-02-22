@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ccknr7mvyvppl"]
 
-[ext_resource type="Script" path="res://components/gui/mouse_cursor.gd" id="1_5sq1w"]
+[ext_resource type="Script" uid="uid://btyr1sfwcfimt" path="res://components/gui/mouse_cursor.gd" id="1_5sq1w"]
 [ext_resource type="Texture2D" uid="uid://buhcwryrqlwc4" path="res://assets/mvc_deploy.png" id="2_ji3pl"]
 [ext_resource type="Texture2D" uid="uid://drmc51o57l2vl" path="res://assets/hover_selection.png" id="2_yhf5a"]
 [ext_resource type="Texture2D" uid="uid://c6v6aw4b7kail" path="res://assets/move_unit.png" id="4_bxqtk"]
@@ -99,10 +99,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4xwto"]
 _data = {
-"RESET": SubResource("Animation_yqvm3"),
-"deploy": SubResource("Animation_nytuf"),
-"move": SubResource("Animation_jpgmi"),
-"selection": SubResource("Animation_36orn")
+&"RESET": SubResource("Animation_yqvm3"),
+&"deploy": SubResource("Animation_nytuf"),
+&"move": SubResource("Animation_jpgmi"),
+&"selection": SubResource("Animation_36orn")
 }
 
 [node name="MouseCursor" type="Control"]
@@ -132,5 +132,5 @@ frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2d"]
 libraries = {
-"": SubResource("AnimationLibrary_4xwto")
+&"": SubResource("AnimationLibrary_4xwto")
 }

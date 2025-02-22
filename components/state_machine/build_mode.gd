@@ -1,10 +1,10 @@
 class_name BuildMode
 extends State
 
-@export var tile_map := NodePath()
+@export var tile_map_layer := NodePath()
 @export var build_area := NodePath()
 
-@onready var tilemap: TileMap = get_node(tile_map)
+@onready var tilemaplayer: TileMapLayer = get_node(tile_map_layer)
 @onready var buildarea: Area2D = get_node(build_area)
 
 var tile_id
@@ -23,9 +23,8 @@ func unselect() -> void:
 func empty_cell_clicked(target):
 	if buildarea.is_valid():
 		buildarea.disable()
-		tilemap.build(target, tile_id)
+		tilemaplayer.build(target, tile_id)
 		get_tree().call_group("fog_handler", "blend_fog", target)
-		tilemap.remove_navigation(target, buildarea.size)
+		tilemaplayer.remove_navigation(target, buildarea.size)
 		btn.reset()
 		state_machine.transition_to("NothingSelected")
-

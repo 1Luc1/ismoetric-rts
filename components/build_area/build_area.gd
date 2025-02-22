@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var build_area_polygon: Polygon2D = $Polygon2D
 @onready var collision_polygon: CollisionPolygon2D = $CollisionPolygon2D
-@onready var parent: TileMap = get_parent()
+@onready var parent: TileMapLayer = get_parent()
 
 var valid := false
 var size: Vector2i
@@ -11,7 +11,7 @@ var valid_color := Color(0.55,1,1,0.42)
 var invalid_color := Color(1,0.1,0.1, 0.8)
 
 func _ready():
-	assert(parent.is_class("TileMap"), "parent has to be tilemap")
+	assert(parent.is_class("TileMapLayer"), "parent has to be tilemaplayer")
 	make_invisible()
 
 

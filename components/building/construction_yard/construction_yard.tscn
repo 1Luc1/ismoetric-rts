@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://dd5sgt7jb7308"]
 
-[ext_resource type="Script" path="res://components/building/construction_yard/construction_yard.gd" id="1_aync5"]
+[ext_resource type="Script" uid="uid://xo8kej3ot3le" path="res://components/building/construction_yard/construction_yard.gd" id="1_aync5"]
 [ext_resource type="Texture2D" uid="uid://c7yarngwkmbmd" path="res://components/building/construction_yard/g785.png" id="2_qg6sw"]
 [ext_resource type="Texture2D" uid="uid://c1vtjrlx362ca" path="res://components/building/construction_yard/anim/build/build.png" id="3_e4p7o"]
 
@@ -70,13 +70,62 @@ region = Rect2(3840, 0, 256, 212)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rvxn"]
 animations = [{
-"frames": [SubResource("AtlasTexture_r4r4r"), SubResource("AtlasTexture_fbymh"), SubResource("AtlasTexture_v4xi1"), SubResource("AtlasTexture_5cfu8"), SubResource("AtlasTexture_yerkl"), SubResource("AtlasTexture_mcdrc"), SubResource("AtlasTexture_vv4y5"), SubResource("AtlasTexture_61sq8"), SubResource("AtlasTexture_ehgun"), SubResource("AtlasTexture_u7bb5"), SubResource("AtlasTexture_l4vst"), SubResource("AtlasTexture_2vwy2"), SubResource("AtlasTexture_1hbeb"), SubResource("AtlasTexture_v7jlf"), SubResource("AtlasTexture_i3gaa"), SubResource("AtlasTexture_0j4co")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4r4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbymh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cfu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yerkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcdrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv4y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61sq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehgun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7bb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4vst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vwy2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hbeb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7jlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3gaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j4co")
+}],
 "loop": false,
 "name": &"build",
 "speed": 10.0
 }]
 
 [node name="construction_yard" type="StaticBody2D"]
+z_index = 3
 position = Vector2(0, -64)
 script = ExtResource("1_aync5")
 
@@ -89,7 +138,7 @@ region_rect = Rect2(-2, -2, 132, 132)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(22, 6)
 scale = Vector2(0.9375, 0.877358)
-frames = SubResource("SpriteFrames_0rvxn")
+sprite_frames = SubResource("SpriteFrames_0rvxn")
 animation = &"build"
 
 [node name="WorldCollision" type="CollisionPolygon2D" parent="."]

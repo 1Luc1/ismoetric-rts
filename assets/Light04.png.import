@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/Light04.png-043fce079b3987c7d7b01ad38437f1ec.
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

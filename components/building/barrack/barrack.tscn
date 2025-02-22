@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2qg1cmsu28fb"]
 
-[ext_resource type="Script" path="res://components/building/barrack/barrack.gd" id="1_oj2cd"]
+[ext_resource type="Script" uid="uid://c5pxgtltq1x0o" path="res://components/building/barrack/barrack.gd" id="1_oj2cd"]
 [ext_resource type="Texture2D" uid="uid://cj6dxfoaq2y4d" path="res://components/building/barrack/anim/build/build.png" id="3_dxaxd"]
 [ext_resource type="Texture2D" uid="uid://cp8wtcmklmwx1" path="res://components/building/barrack/path1434.png" id="4_hjdy6"]
 
@@ -22,7 +22,19 @@ region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0rvxn"]
 animations = [{
-"frames": [SubResource("AtlasTexture_w1igr"), SubResource("AtlasTexture_i3jdw"), SubResource("AtlasTexture_8sxsd"), SubResource("AtlasTexture_1tmt2")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1igr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3jdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sxsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tmt2")
+}],
 "loop": false,
 "name": &"build",
 "speed": 10.0
@@ -40,7 +52,7 @@ region_rect = Rect2(-2, -2, 132, 132)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
-frames = SubResource("SpriteFrames_0rvxn")
+sprite_frames = SubResource("SpriteFrames_0rvxn")
 animation = &"build"
 
 [node name="WorldCollision" type="CollisionPolygon2D" parent="."]
