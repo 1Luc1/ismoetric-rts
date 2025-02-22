@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://d1wjphvkcrc8x"]
+[gd_scene load_steps=30 format=4 uid="uid://d1wjphvkcrc8x"]
 
+[ext_resource type="Script" uid="uid://dxqpigabhnhhn" path="res://main.gd" id="1_getpj"]
 [ext_resource type="Script" uid="uid://cc5ewqgxa8tlw" path="res://main/select_draw.gd" id="2_5dnb1"]
 [ext_resource type="PackedScene" uid="uid://ccknr7mvyvppl" path="res://components/gui/mouse_cursor.tscn" id="2_62bch"]
 [ext_resource type="PackedScene" uid="uid://cpgfvt8hqjbkq" path="res://components/building/powerplant/powerplant.tscn" id="2_j7gcy"]
@@ -68,6 +69,7 @@ sources/1 = SubResource("TileSetAtlasSource_5nbqc")
 sources/2 = SubResource("TileSetAtlasSource_ydm77")
 
 [node name="Main" type="Node2D" groups=["fog_handler"]]
+script = ExtResource("1_getpj")
 
 [node name="Fog" type="Sprite2D" parent="."]
 z_index = 2
