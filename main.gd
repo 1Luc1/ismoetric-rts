@@ -25,7 +25,6 @@ func _ready():
 	var fog_image_width = int(float(display_width)/float(GRID_SIZE))
 	var fog_image_height = int(float(display_height)/float(GRID_SIZE))
 	fogImage = Image.create(fog_image_width, fog_image_height, false, Image.FORMAT_RGBAH)
-	Image.create(fog_image_width, fog_image_height, false, Image.FORMAT_RGBAH)
 	fogImage.fill(Color.BLACK)
 	lightImage.convert(Image.FORMAT_RGBAH)
 	light_rect = Rect2(Vector2.ZERO, Vector2(lightImage.get_width(), lightImage.get_height()))
