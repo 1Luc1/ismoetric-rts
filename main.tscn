@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://d1wjphvkcrc8x"]
+[gd_scene load_steps=31 format=4 uid="uid://d1wjphvkcrc8x"]
 
 [ext_resource type="Script" uid="uid://dxqpigabhnhhn" path="res://main.gd" id="1_getpj"]
 [ext_resource type="Script" uid="uid://cc5ewqgxa8tlw" path="res://main/select_draw.gd" id="2_5dnb1"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cy61jn2mj4p05" path="res://components/build_area/build_area.tscn" id="8_scd54"]
 [ext_resource type="Script" uid="uid://gese7bejudi5" path="res://main/camera.gd" id="9_bbsjf"]
 [ext_resource type="Theme" uid="uid://rhs712yen6ls" path="res://new_theme.tres" id="11_40bup"]
+[ext_resource type="Script" uid="uid://cxodupq4sxm1" path="res://main/building.gd" id="12_ryguw"]
 [ext_resource type="Script" uid="uid://byw8s0cs5xpev" path="res://components/state_machine/units_selected.gd" id="17_gt4r6"]
 [ext_resource type="Script" uid="uid://dgo347gb5ocos" path="res://components/state_machine/state_machine.gd" id="17_hif8h"]
 [ext_resource type="Script" uid="uid://cos6icmpb5bfl" path="res://components/state_machine/nothing_selected.gd" id="18_4gojg"]
@@ -82,21 +83,20 @@ z_index = 2
 script = ExtResource("2_5dnb1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-y_sort_enabled = true
 tile_set = SubResource("TileSet_82xsv")
 script = ExtResource("3_getpj")
 
 [node name="BuildArea" parent="TileMapLayer" instance=ExtResource("8_scd54")]
 visible = false
 
-[node name="MCV" parent="TileMapLayer" instance=ExtResource("3_tulbp")]
-position = Vector2(584, 296)
-
 [node name="building" type="TileMapLayer" parent="TileMapLayer"]
-z_index = 1
 y_sort_enabled = true
 use_parent_material = true
 tile_set = SubResource("TileSet_2vees")
+script = ExtResource("12_ryguw")
+
+[node name="MCV" parent="TileMapLayer/building" instance=ExtResource("3_tulbp")]
+position = Vector2(584, 296)
 
 [node name="floor" type="TileMapLayer" parent="TileMapLayer"]
 z_index = -1
@@ -194,7 +194,7 @@ script = ExtResource("20_tvok4")
 
 [node name="BuildMode" type="Node" parent="StateMachine"]
 script = ExtResource("20_5n8vq")
-tile_map_layer = NodePath("../../TileMapLayer")
+building_layer = NodePath("../../TileMapLayer/building")
 build_area = NodePath("../../TileMapLayer/BuildArea")
 
 [node name="DragMode" type="Node" parent="StateMachine"]

@@ -14,13 +14,6 @@ func _unhandled_input(event):
 		get_tree().call_group("input_handler", "drag", get_global_mouse_position())
 
 
-func build(target, tile_id) -> void:
-	var source_id := 4
-	var coords = local_to_map(target)
-	var atlas_coords = Vector2i(0,0)
-	building_floor.set_cell(coords, source_id, atlas_coords, tile_id)
-
-
 func remove_navigation(target, size) -> void:
 	var coords = local_to_map(target)
 	var move_cords: Vector2i = coords
