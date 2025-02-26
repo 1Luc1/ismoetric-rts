@@ -62,7 +62,7 @@ func revert():
 			play_move()
 		Animations.Deploy:
 			play_deploy()
-	saved_animation = -1
+	saved_animation = Animations.Default
 
 
 func _process(_delta):
