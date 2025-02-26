@@ -125,7 +125,6 @@ animations = [{
 }]
 
 [node name="construction_yard" type="StaticBody2D"]
-z_index = 3
 position = Vector2(0, -64)
 script = ExtResource("1_aync5")
 
