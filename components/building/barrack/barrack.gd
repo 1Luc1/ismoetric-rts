@@ -24,6 +24,7 @@ func spawn_unit(unit_data):
 	var unit = super.spawn_unit(unit_data)
 	unit.global_position = $SpawnMarker.global_position
 	unit.set_target_location(waypoint.global_position)
+	return unit
 	
 func set_waypoint(target):
 	if waypoint:
